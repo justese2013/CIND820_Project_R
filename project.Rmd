@@ -13,19 +13,46 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
+```{r data.file}
 data.file<-read.csv("duration_of_unemployment_2006-19.csv", header = T)
+
+# Print first 6 values of the dataset
 head(data.file)
-summary("duration_of_unemployment_2006-19.csv")
+
 
 ```
 
-## Including Plots
+```{r}
+# Check for any mising values
+#rowSums()
+rowSums(is.na(data.file))
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```
+
+
+```{r}
+# Check summary of dataset to display min, max, and percentiles
+summary(data.file)
+
+```
+
+
+```{r}
+
+#Check syructure of the dataset
+
+str(data.file)
+
+```
+
+
+## 
+
+#
+
+```{r }
+
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
