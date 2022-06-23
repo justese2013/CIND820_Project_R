@@ -14,26 +14,57 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ```{r data.file}
+#Importing the data set
+
 data.file<-read.csv("duration_of_unemployment_2006-19.csv", header = T)
 
-# Print first 6 values of the dataset
+# Print first 6 values of the data set
 head(data.file)
 
 
 ```
-
 ```{r}
-# Check for any mising values
+#check for the class of the data
+class(data.file)
+```
+```{r}
+#Check for the number of rows and colums in the 
+#data frame
+dim(data.file)
+```
+```{r}
+# Check for any missing values and sum of missing #value
 #rowSums()
 rowSums(is.na(data.file))
+sum(is.na(data.file))
+```
+
+```{r}
+# Check summary of data set to display min, max, and percentiles
+summary(data.file)
 
 
 ```
+```{r}
+#Check structure of the data set
 
+str(data.file)
+
+```
 
 ```{r}
-# Check summary of dataset to display min, max, and percentiles
-summary(data.file)
+data.file1<-data.file[data.file$Immig.!="Total", ]
+data.file2<-data.file1[data.file1$Immig.!="Total Landed immigrants", ]
+str(data.file2)
+
+```
+
+```{r}
+#Visual exploratory data analysis
+
+
+
+
 
 ```
 
@@ -52,6 +83,7 @@ str(data.file)
 #
 
 ```{r }
+
 
 ```
 
